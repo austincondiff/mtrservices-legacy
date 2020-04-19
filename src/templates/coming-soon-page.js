@@ -62,7 +62,8 @@ export const IndexPageTemplate = ({
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
           style={{
             color: 'white',
-            fontFamily: 'MuseoSans-700',
+            fontFamily: 'museo-sans, sans-serif',
+            fontWeight: '700',
             fontSize: '56px',
             letterSpacing: 0,
             lineHeight: '64px',
@@ -76,7 +77,8 @@ export const IndexPageTemplate = ({
         <h3
           className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
           style={{
-            fontFamily: 'MuseoSans-700',
+            fontFamily: 'museo-sans, sans-serif',
+            fontWeight: '700',
             fontSize: '20px',
             color: '#F7B154',
             lineHeight: '32px',
@@ -92,7 +94,8 @@ export const IndexPageTemplate = ({
             backgroundImage: `linear-gradient(134deg, #F25E1C 0%, #EDC621 100%)`,
             borderRadius: 4,
             color: 'white',
-            fontFamily: 'MuseoSans-700',
+            fontFamily: 'museo-sans, sans-serif',
+            fontWeight: '700',
             fontSize: '16px',
             letterSpacing: '0.57px',
             textAlign: 'center',
@@ -105,7 +108,8 @@ export const IndexPageTemplate = ({
             backgroundImage: `linear-gradient(134deg, #F25E1C 0%, #EDC621 100%)`,
             borderRadius: 4,
             color: 'white',
-            fontFamily: 'MuseoSans-700',
+            fontFamily: 'museo-sans, sans-serif',
+            fontWeight: '700',
             fontSize: '16px',
             letterSpacing: '0.57px',
             textAlign: 'center',
