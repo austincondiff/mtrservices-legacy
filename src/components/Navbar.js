@@ -38,13 +38,22 @@ const Navbar = class extends React.Component {
         className="navbar is-transparent"
         role="navigation"
         aria-label="main-navigation"
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: 128,
+          backgroundColor: 'transparent'
+        }}
       >
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
+              <img src={logo} alt="Kaldi" style={{ height: '32px' }} />
             </Link>
             {/* Hamburger menu */}
+            {/*
             <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
               data-target="navMenu"
@@ -88,6 +97,7 @@ const Navbar = class extends React.Component {
                 </span>
               </a>
             </div>
+            */}
           </div>
         </div>
       </nav>
