@@ -90,7 +90,7 @@ export const IndexPageTemplate = ({
           Need IT help? Get support now or sign up to be notified when we launch our new website.
         </h3>
         <div>
-          <button style={{
+          <button onClick={() => window.open('http://support.mtrservices.com/download_client_connector?id=2&name=Mark+Condiff')} style={{
             backgroundImage: `linear-gradient(134deg, #F25E1C 0%, #EDC621 100%)`,
             borderRadius: 4,
             color: 'white',
@@ -105,7 +105,8 @@ export const IndexPageTemplate = ({
             marginRight: 16
           }}>Get support</button>
           <button style={{
-            backgroundImage: `linear-gradient(134deg, #F25E1C 0%, #EDC621 100%)`,
+            background: 'transparent',
+            // backgroundImage: `linear-gradient(134deg, #F25E1C 0%, #EDC621 100%)`,
             borderRadius: 4,
             color: 'white',
             fontFamily: 'museo-sans, sans-serif',
@@ -115,8 +116,26 @@ export const IndexPageTemplate = ({
             textAlign: 'center',
             width: 240,
             lineHeight: '56px',
-            border: 0
-          }}>Be notified</button>
+            border: 0,
+            position: 'relative'
+          }}>
+          <svg style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%'
+            }} width="100%" height="100%">
+            <defs>
+              <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient">
+                <stop stopColor="#F25E1C" offset="0%"></stop>
+                <stop stopColor="#EDC621" offset="100%"></stop>
+              </linearGradient>
+            </defs>
+            <rect id="Rectangle-Copy" fill="none" stroke="url(#linearGradient)" strokeWidth="3" x="1.5" y="1.5" width="calc(100% - 3px)" height="calc(100% - 3px)" rx="4"></rect>
+          </svg>
+          <span>Be notified</span>
+        </button>
         </div>
       </div>
     </div>
