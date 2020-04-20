@@ -6702,6 +6702,13 @@ gatsby-plugin-sharp@^2.2.9:
     svgo "1.3.2"
     uuid "^3.4.0"
 
+gatsby-plugin-styled-components@^3.2.3:
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-styled-components/-/gatsby-plugin-styled-components-3.2.3.tgz#616f2780713a2ad975d3b2729803bd945815f63d"
+  integrity sha512-3t7DWz57T52huhBnaXny8R2jhXbvKBWQjA4CMOtauTRzopGLgJf90y4f81arqrhnyyTm8rmX8NI1PzAt8RJomg==
+  dependencies:
+    "@babel/runtime" "^7.8.7"
+
 gatsby-react-router-scroll@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.2.2.tgz#964860034f846e0f0309185988a5e7aa93c9e13f"
