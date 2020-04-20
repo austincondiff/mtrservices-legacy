@@ -7,6 +7,11 @@ import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
 
+import facebook from '../img/social/facebook.svg'
+import instagram from '../img/social/instagram.svg'
+import twitter from '../img/social/twitter.svg'
+import linkedin from '../img/social/linkedin.svg'
+
 const Wrap = styled.div`
   background-color: #090D1C;
   background-image: url(${({imgUrl}) => imgUrl});
@@ -91,6 +96,31 @@ const ButtonWrap = styled.button`
     ${({primary}) => primary ? `` : `background-color: rgba(242,94,28,0.1);`}
   }
 `
+const SocialWrap = styled.div`
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  display: flex;
+  flex-direction: column;
+`
+
+const SocialButton = styled.button`
+  width: 48px;
+  height: 48px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.15), 0 4px 12px 0 rgba(0,0,0,0.15);
+  border: 0;
+  margin: 8px;
+  outline: none;
+  transition: 200ms;
+  transform: scale(1);
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.15), 0 8px 24px 0 rgba(0,0,0,0.15);
+  }
+`
 
 const Button = ({ children, primary, ...props }) => (
   <ButtonWrap primary={primary} {...props}>
@@ -135,6 +165,12 @@ export const IndexPageTemplate = ({ image }) => (
         </Button>
       </div>
     </Content>
+    <SocialWrap>
+      <SocialButton onClick={() => window.open('https://www.linkedin.com/company/mtrservices')}><img src={linkedin} /></SocialButton>
+      <SocialButton onClick={() => window.open('https://twitter.com/mtrservices')}><img src={twitter} /></SocialButton>
+      <SocialButton onClick={() => window.open('https://instagram.com/mtrservices')}><img src={instagram} /></SocialButton>
+      <SocialButton onClick={() => window.open('https://facebook.com/mtrservices')}><img src={facebook} /></SocialButton>
+    </SocialWrap>
   </Wrap>
 )
 
