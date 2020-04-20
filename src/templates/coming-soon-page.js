@@ -58,7 +58,7 @@ const Title = styled.h1`
   font-weight: 700;
   font-size: 48px;
   letter-spacing: 0;
-  line-height: 64px;
+  line-height: 56px;
   width: 25%;
   margin-bottom: 32px;
 `
