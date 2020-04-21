@@ -117,7 +117,7 @@ const AngledAccent = styled.div`
   left: 75%;
   transform: skew(-15deg, 0deg);
   background: linear-gradient(0deg, #F25E1C 0%, #EDC621 100%);
-  animation: 800ms 200ms ${slideAngledAccentIn} ease-out both;
+  animation: 1500ms 200ms ${slideAngledAccentIn} cubic-bezier(0.4, 0, 0.2, 1) both;
 `
 const Content = styled.div`
   display: flex;
