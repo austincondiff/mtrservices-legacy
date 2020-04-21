@@ -261,7 +261,7 @@ export const IndexPageTemplate = ({ image }) => (
       <SocialButton onClick={() => window.open('https://www.linkedin.com/company/mtrservices')}><img src={linkedin} /></SocialButton>
       <SocialButton onClick={() => window.open('https://twitter.com/mtrservices')}><img src={twitter} /></SocialButton>
       <SocialButton onClick={() => window.open('https://instagram.com/mtr.services')}><img src={instagram} /></SocialButton>
-      <SocialButton onClick={() => window.open('https://facebook.com/mtrservices')}><img src={facebook} /></SocialButton>
+      <SocialButton onClick={() => window.open('https://fb.me/mtrservices.it')}><img src={facebook} /></SocialButton>
     </SocialWrap>
   </Wrap>
 )
