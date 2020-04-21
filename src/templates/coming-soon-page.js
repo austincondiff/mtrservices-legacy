@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 import Layout from '../components/Layout'
 import Features from '../components/Features'
@@ -12,11 +12,67 @@ import instagram from '../img/social/instagram.svg'
 import twitter from '../img/social/twitter.svg'
 import linkedin from '../img/social/linkedin.svg'
 
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`
+const slideInFromTop = keyframes`
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+`
+const slideInFromRight = keyframes`
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+`
+const slideInFromBottom = keyframes`
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+`
+const slideInFromLeft = keyframes`
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+`
+const scaleIn = keyframes`
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+`
+const fadeInScaleDown = keyframes`
+  0% {
+    opacity: 0;
+    transform: scale(1.25);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+`
+
 const Wrap = styled.div`
   background-color: #090D1C;
-  background-image: url(${({imgUrl}) => imgUrl});
-  background-position: top left;
-  background-attachment: fixed;
   position: relative;
   height: 100vh;
   width: 100vw;
@@ -26,6 +82,17 @@ const Wrap = styled.div`
   justify-content: center;
   align-items: center;
 `
+const ImageCover = styled.div`
+  background-image: url(${({imgUrl}) => imgUrl});
+  background-position: top left;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  animation: 2000ms 200ms ${fadeInScaleDown} ease-out backwards;
+`;
 const Cover = styled.div`
   position: absolute;
   top: 0;
@@ -34,6 +101,14 @@ const Cover = styled.div`
   left: 0;
   background: linear-gradient(90deg, rgba(9,13,28,1) 0%, rgba(9,13,28,0.5) 100%);
 `;
+const slideAngledAccentIn = keyframes`
+  0% {
+    transform: skew(-15deg, 0deg) translateX(100%);
+  }
+  100% {
+    transform: skew(-15deg, 0deg) translateX(0%);
+  }
+`
 const AngledAccent = styled.div`
   position: absolute;
   top: 0;
@@ -42,6 +117,7 @@ const AngledAccent = styled.div`
   left: 75%;
   transform: skew(-15deg, 0deg);
   background: linear-gradient(0deg, #F25E1C 0%, #EDC621 100%);
+  animation: 800ms 200ms ${slideAngledAccentIn} ease-out both;
 `
 const Content = styled.div`
   display: flex;
@@ -61,6 +137,7 @@ const Title = styled.h1`
   line-height: 56px;
   width: 25%;
   margin-bottom: 32px;
+  animation: 1500ms 200ms ${fadeIn} ease-out both;
 `
 const Subtitle = styled.h3`
   color: #F7B154;
@@ -70,6 +147,7 @@ const Subtitle = styled.h3`
   line-height: 32px;
   width: 50%;
   margin-bottom: 64px;
+  animation: 1500ms 400ms ${fadeIn} ease-out both;
 `
 const ButtonWrap = styled.button`
   background: ${({primary}) => primary ? `linear-gradient(134deg, #F25E1C 0%, #EDC621 100%)` : `transparent`};
@@ -90,6 +168,7 @@ const ButtonWrap = styled.button`
   outline: none;
   transform: scale(1);
   box-shadow: 0 0 0 rgba(242,94,28,0);
+  animation: 1500ms 600ms ${fadeIn} ease-out both;
   &:hover {
     transform: scale(1.05);
     box-shadow: 0 16px 48px rgba(242,94,28,0.25);
@@ -120,6 +199,18 @@ const SocialButton = styled.button`
     transform: scale(1.15);
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.15), 0 8px 24px 0 rgba(0,0,0,0.15);
   }
+  &:nth-child(1) {
+    animation: 200ms 1400ms ${scaleIn} ease-out backwards;
+  }
+  &:nth-child(2) {
+    animation: 200ms 1300ms ${scaleIn} ease-out backwards;
+  }
+  &:nth-child(3) {
+    animation: 200ms 1200ms ${scaleIn} ease-out backwards;
+  }
+  &:nth-child(4) {
+    animation: 200ms 1100ms ${scaleIn} ease-out backwards;
+  }
 `
 
 const Button = ({ children, primary, ...props }) => (
@@ -146,7 +237,8 @@ const Button = ({ children, primary, ...props }) => (
 )
 
 export const IndexPageTemplate = ({ image }) => (
-  <Wrap imgUrl={!!image.childImageSharp ? image.childImageSharp.fluid.src : image}>
+  <Wrap>
+    <ImageCover imgUrl={!!image.childImageSharp ? image.childImageSharp.fluid.src : image} />
     <Cover />
     <AngledAccent />
     <Content className="container">
@@ -168,7 +260,7 @@ export const IndexPageTemplate = ({ image }) => (
     <SocialWrap>
       <SocialButton onClick={() => window.open('https://www.linkedin.com/company/mtrservices')}><img src={linkedin} /></SocialButton>
       <SocialButton onClick={() => window.open('https://twitter.com/mtrservices')}><img src={twitter} /></SocialButton>
-      <SocialButton onClick={() => window.open('https://instagram.com/mtrservices')}><img src={instagram} /></SocialButton>
+      <SocialButton onClick={() => window.open('https://instagram.com/mtr.services')}><img src={instagram} /></SocialButton>
       <SocialButton onClick={() => window.open('https://facebook.com/mtrservices')}><img src={facebook} /></SocialButton>
     </SocialWrap>
   </Wrap>
