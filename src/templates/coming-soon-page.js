@@ -84,8 +84,8 @@ const Wrap = styled.div`
 `
 const ImageCover = styled.div`
   background-image: url(${({imgUrl}) => imgUrl});
-  background-position: top left;
-  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
   position: absolute;
   top: 0;
   right: 0;
@@ -103,10 +103,10 @@ const Cover = styled.div`
 `;
 const slideAngledAccentIn = keyframes`
   0% {
-    transform: skew(-15deg, 0deg) translateX(100%);
+    transform: skew(-27deg, 0deg) translateX(100%);
   }
   100% {
-    transform: skew(-15deg, 0deg) translateX(0%);
+    transform: skew(-27deg, 0deg) translateX(0%);
   }
 `
 const AngledAccent = styled.div`
@@ -115,7 +115,7 @@ const AngledAccent = styled.div`
   right: -50%;
   bottom: 0;
   left: 75%;
-  transform: skew(-15deg, 0deg);
+  transform: skew(-27deg, 0deg);
   background: linear-gradient(0deg, #F25E1C 0%, #EDC621 100%);
   animation: 1500ms 200ms ${slideAngledAccentIn} cubic-bezier(0.4, 0, 0.2, 1) both;
 `
